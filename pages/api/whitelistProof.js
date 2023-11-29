@@ -11,7 +11,7 @@ const run = (req, res) => (fn) => new Promise((resolve, reject) => {
 
 const { MerkleTree } = require('merkletreejs');
 const keccak256 = require('keccak256');
-let whitelist = require('../../utils/whitelist.json');
+let whitelist = [];;
 const hashedAddresses = whitelist.map(addr => keccak256(addr));
 const merkleTree = new MerkleTree(hashedAddresses, keccak256, { sortPairs: true });
 
